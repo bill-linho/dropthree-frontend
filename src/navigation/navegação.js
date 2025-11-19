@@ -5,11 +5,12 @@ const Stack = createNativeStackNavigator()
 
 import ProductDetails from '../screens/paginadoProduto'
 import Home from '../screens/home'
+import Products from '../screens/product';
 
 export default function stackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="InterfaceDosProdutos">
 
                 <Stack.Screen name="Home" component={Home} />
 
@@ -17,7 +18,7 @@ export default function stackRoutes() {
 
                 <Stack.Screen name="Cadastro" component={Home} />
 
-                <Stack.Screen name="InterfaceDosProdutos" component={Home} />
+                <Stack.Screen name="InterfaceDosProdutos" component={Products} />
 
                 <Stack.Screen name="PaginaProduto" component={ProductDetails} />
 
