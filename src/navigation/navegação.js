@@ -6,17 +6,18 @@ const Stack = createNativeStackNavigator()
 import ProductDetails from '../screens/paginadoProduto'
 import Home from '../screens/home'
 import login from '../screens/Login';
+import SignUpScreen from '../screens/Cadastro';
 
 export default function stackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Login">
+            <Stack.Navigator initialRouteName="Cadastro">
 
                 <Stack.Screen name="Home" component={Home} />
 
                 <Stack.Screen name="Login" component={login} />
 
-                <Stack.Screen name="Cadastro" component={Home} />
+                <Stack.Screen name="Cadastro" component={SignUpScreen} />
 
                 <Stack.Screen name="InterfaceDosProdutos" component={Home} />
 
