@@ -9,7 +9,7 @@ import Home from '../screens/home'
 export default function stackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="PaginaProduto">
 
                 <Stack.Screen name="Home" component={Home} />
 
