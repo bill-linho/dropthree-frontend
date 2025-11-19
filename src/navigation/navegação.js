@@ -5,6 +5,7 @@ const Stack = createNativeStackNavigator()
 
 import ProductDetails from '../screens/paginadoProduto'
 import Home from '../screens/home'
+import login from '../screens/Login';
 
 export default function stackRoutes() {
     return (
@@ -13,7 +14,7 @@ export default function stackRoutes() {
 
                 <Stack.Screen name="Home" component={Home} />
 
-                <Stack.Screen name="Login" component={Home} />
+                <Stack.Screen name="Login" component={login} />
 
                 <Stack.Screen name="Cadastro" component={Home} />
 
