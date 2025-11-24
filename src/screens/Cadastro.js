@@ -27,6 +27,7 @@ export default function SignUpScreen() {
   const handleBack = () => {
     console.log("Voltar pressionado");
     Alert.alert("Navegação", "Botão de voltar pressionado");
+    navigation.navigate("Login");
   };
 
   return (

@@ -4,62 +4,87 @@ import {
     Text,
     View,
     TextInput,
-    TouchableOpacity,
-    Alert
+    TouchableOpacity
 } from 'react-native';
+import { login } from '../services/serviceLogin';
 
-export default function login() {
-    const [name, setName] = useState('');
+export default function Login({ navigation }) {
+
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [spam, setSpam] = useState('');
 
-    const handleEnter = () => {
-
-        Alert.alert('Login', `Bem-vindo(a), ${name}! Redirecionando para o site principal...`);
-    };
-
-    const handleRegister = () => {
-
-        Alert.alert('Cadastro', 'Redirecionando para a tela de cadastro...');
-    };
+    async function handleLogin() {
+        setSpam("");
+    
+        if (!email || !password) {
+            setSpam("Preencha email e senha.");
+            return;
+        }
+    
+        const result = await login(email, password);
+    
+        if (!result) {
+            setSpam("Erro ao conectar ao servidor.");
+            return;
+        }
+    
+        if (result.mensagem !== "Login realizado com sucesso") {
+            setSpam("Email ou senha inválidos.");
+            return;
+        }
+    
+        navigation.replace("Home");
+    }
+    
+    function handleCadastro() {
+        navigation.navigate("Cadastro");
+    }
 
     return (
         <View style={styles.container}>
 
             <View style={styles.contentContainer}>
-                <Text style={styles.title}>TELA DE LOGIN</Text>
+                <Text style={styles.title}>Entrada do Drop DropThree</Text>
 
-                <Text style={styles.label}>Nome do Usuário</Text>
+                <Text style={styles.label}>Seu E-mail</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite seu nome"
-                    value={name}
-                    onChangeText={setName}
+                    placeholder="Digite seu email"
+                    value={email}
+                    onChangeText={setEmail}
                 />
 
                 <Text style={styles.label}>Senha</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Digite sua senha"
+                    secureTextEntry
                     value={password}
                     onChangeText={setPassword}
                 />
+
+                {spam !== "" && (
+                    <Text style={{ color: "red", textAlign: "center", marginTop: 10 }}>
+                        {spam}
+                    </Text>
+                )}
             </View>
 
             <View style={styles.footerContainer}>
                 <TouchableOpacity
                     style={[styles.button, styles.buttonSecondary]}
-                    onPress={handleRegister}
+                    onPress={handleCadastro}
                 >
                     <Text style={styles.buttonTextSecondary}>CADASTRO</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={[styles.button, styles.buttonPrimary]}
-                    onPress={handleEnter}
+                    onPress={handleLogin}
                 >
                     <Text style={styles.buttonTextPrimary}>ENTRAR</Text>
                 </TouchableOpacity>
-
             </View>
 
         </View>
