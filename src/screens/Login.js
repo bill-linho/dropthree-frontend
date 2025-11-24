@@ -34,7 +34,7 @@ export default function Login({ navigation }) {
             return;
         }
     
-        navigation.replace("Home");
+        navigation.replace("InterfaceDosProdutos");
     }
     
     function handleCadastro() {
@@ -45,7 +45,7 @@ export default function Login({ navigation }) {
         <View style={styles.container}>
 
             <View style={styles.contentContainer}>
-                <Text style={styles.title}>Entrada do Drop DropThree</Text>
+                <Text style={styles.title}>Login do DropThree</Text>
 
                 <Text style={styles.label}>Seu E-mail</Text>
                 <TextInput

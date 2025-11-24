@@ -7,6 +7,7 @@ import {
   TouchableOpacity, 
   Alert 
 } from 'react-native';
+import { login } from '../services/serviceLogin';
 
 export default function SignUpScreen() {
   const [names, setNames] = useState('');
@@ -16,17 +17,13 @@ export default function SignUpScreen() {
 
   const handleRegister = () => {
     if (!names || !email || !phone || !passwords) {
-      Alert.alert("Erro", "Por favor, preencha todos os campos.");
-      return;
+      return
     }
     
-    Alert.alert("Sucesso", `Usuário ${names} cadastrado com sucesso!`);
-    console.log({ names, email, phone, passwords });
+
   };
 
   const handleBack = () => {
-    console.log("Voltar pressionado");
-    Alert.alert("Navegação", "Botão de voltar pressionado");
     navigation.navigate("Login");
   };
 
