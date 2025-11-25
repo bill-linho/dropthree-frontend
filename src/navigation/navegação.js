@@ -12,7 +12,7 @@ import SignUpScreen from '../screens/Cadastro';
 export default function stackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="Login">
 
                 <Stack.Screen name="Home" component={Home} />
 
