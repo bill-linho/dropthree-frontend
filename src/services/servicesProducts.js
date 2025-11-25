@@ -7,7 +7,9 @@ export async function getProduct() {
             method: 'GET'
         })
         const data = await response.json()
-        return data.data;
+        console.log(data);
+        
+        return data.dados;
     } catch (e) {
 
     }
