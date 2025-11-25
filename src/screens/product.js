@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TouchableOpacity, View, Text, FlatList, Image, ScrollView, StyleSheet, Linking } from "react-native";
+import { TouchableOpacity, View, Text, FlatList, Image,StyleSheet, Linking } from "react-native";
 
 import { getProduct } from "../services/servicesProducts";
 
@@ -65,8 +65,8 @@ export default function Products() {
 const Styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 40, // Mais espaço para status bar
-        backgroundColor: '#F5F7FA', // Fundo cinza moderno e suave
+        paddingTop: 40,
+        backgroundColor: '#F5F7FA',
     },
     menu: {
         paddingVertical: 15,
@@ -75,10 +75,9 @@ const Styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#E1E1E1',
         marginBottom: 10,
-        alignItems: 'center', // Centraliza o título do menu
-        elevation: 2, // Sombra leve no menu
+        alignItems: 'center',
+        elevation: 2,
     },
-    // Estilo para o texto dentro do menu (opcional, se quiser estilizar o "MENU")
     menuText: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -86,17 +85,16 @@ const Styles = StyleSheet.create({
     },
     blocks: {
         flex: 1,
-        paddingHorizontal: 10, // Espaço lateral geral
+        paddingHorizontal: 10,
     },
     blockOne: {
-        flex: 1, // Para dividir o espaço igualmente na coluna
+        flex: 1,
         backgroundColor: '#FFFFFF',
-        borderRadius: 12, // Bordas bem arredondadas
+        borderRadius: 12,
         padding: 12,
-        margin: 6, // Espaçamento entre os cards
+        margin: 6,
         marginBottom: 15,
         
-        // Sombra suave para dar efeito de cartão flutuante
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -104,22 +102,22 @@ const Styles = StyleSheet.create({
         },
         shadowOpacity: 0.1,
         shadowRadius: 3.84,
-        elevation: 5, // Sombra no Android
+        elevation: 5,
         
         alignItems: 'center',
-        justifyContent: 'space-between', // Distribui conteúdo verticalmente
+        justifyContent: 'space-between',
     },
     image: {
-        width: '100%', // Ocupa a largura do card
-        height: 120,   // Altura fixa para padrão
+        width: '100%',
+        height: 120,
         borderRadius: 8,
         marginBottom: 10,
-        resizeMode: 'contain', // Mostra a imagem inteira sem cortar
-        backgroundColor: '#f9f9f9', // Fundo cinza caso a imagem seja png transparente
+        resizeMode: 'contain',
+        backgroundColor: '#f9f9f9',
     },
     textName: {
         fontSize: 15,
-        fontWeight: '700', // Negrito mais forte
+        fontWeight: '700',
         color: '#2D3436',
         textAlign: 'center',
         marginBottom: 4,
@@ -129,14 +127,13 @@ const Styles = StyleSheet.create({
         color: '#636E72',
         textAlign: 'center',
         marginBottom: 12,
-        lineHeight: 16, // Melhora leitura
+        lineHeight: 16,
     },
-    // NOVO: Estilo para o botão "Ir ao Site"
     button: {
-        backgroundColor: '#0984e3', // Azul vibrante
+        backgroundColor: '#0984e3',
         paddingVertical: 10,
         paddingHorizontal: 20,
-        borderRadius: 25, // Botão pílula
+        borderRadius: 25,
         width: '100%',
         alignItems: 'center',
     },
