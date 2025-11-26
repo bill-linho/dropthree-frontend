@@ -29,3 +29,20 @@ export async function login(email, senha) {
         return null;
     }
 }
+export async function register(nome, email, telefone, senha) {
+    const request = `${url}/usuario`;
+
+    try {
+        const response = await fetch(request, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nome, email, telefone, senha })
+        });
+
+        const json = await response.json();
+        return json;
+
+    } catch (e) {
+        return null;
+    }
+}
