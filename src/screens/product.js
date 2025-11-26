@@ -27,7 +27,7 @@ export default function Products() {
                     }}
                 />
                 <Text style={Styles.textName}>
-                    {item.nome_pedido}
+                    {item.nome_produto}
                 </Text>
                 <Text style={Styles.textDescription}>
                     {item.descricao}
