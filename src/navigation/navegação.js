@@ -20,7 +20,7 @@ export default function stackRoutes() {
 
                 <Stack.Screen name="Cadastro" component={SignUpScreen} />
 
-                <Stack.Screen name="InterfaceDosProdutos" component={Products} />
+                <Stack.Screen name="InterfaceDosProdutos" component={Products} options={{tabBarVisible: false,headerTransparent:true,headerShown:false}} />
 
                 <Stack.Screen name="PaginaProduto" component={ProductDetails} />
 
