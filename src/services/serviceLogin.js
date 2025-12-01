@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 const url = 'http://localhost:3000'
 
 export async function getUsuario() {
@@ -6,7 +7,7 @@ export async function getUsuario() {
     try {
         const response = await fetch(request);
         const json = await response.json();
-        return json.dados; 
+        return json.dados;  
     } catch (e) {
         return null;
     }
@@ -23,11 +24,28 @@ export async function login(email, senha) {
         });
 
         const json = await response.json();
+
+        if (json.mensagem === "Login realizado com sucesso" && json.dados) {
+            await AsyncStorage.setItem('@user', JSON.stringify(json.dados));
+        }
         return json;
 
     } catch (e) {
         return null;
     }
+}
+export async function getUsuarioLocal() {
+    try {
+        const jsonValue = await AsyncStorage.getItem('@user');
+        return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+        return null;
+    }
+}
+export async function logout() {
+    try {
+        await AsyncStorage.removeItem('@user');
+    } catch(e) {}
 }
 export async function register(nome, email, telefone, senha) {
     const request = `${url}/usuario`;

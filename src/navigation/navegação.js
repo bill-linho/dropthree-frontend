@@ -8,6 +8,7 @@ import Home from '../screens/home'
 import Products from '../screens/product';
 import login from '../screens/Login';
 import SignUpScreen from '../screens/Cadastro';
+import Settings from '../screens/settings';
 
 export default function stackRoutes() {
     return (
@@ -23,6 +24,8 @@ export default function stackRoutes() {
                 <Stack.Screen name="InterfaceDosProdutos" component={Products} options={{tabBarVisible: false,headerTransparent:true,headerShown:false}} />
 
                 <Stack.Screen name="PaginaProduto" component={ProductDetails} />
+
+                <Stack.Screen name="Settings" component={Settings} />
 
             </Stack.Navigator>
         </NavigationContainer>

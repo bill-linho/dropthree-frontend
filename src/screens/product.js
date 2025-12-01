@@ -1,25 +1,25 @@
 import { useState, useEffect, useRef } from "react";
 import {
-  TouchableOpacity,
-  View,
-  Text,
-  FlatList,
-  Image,
-  StyleSheet,
-  Linking,
-  Modal,
-  Animated,
-  Easing
+    TouchableOpacity,
+    View,
+    Text,
+    FlatList,
+    Image,
+    StyleSheet,
+    Linking,
+    Modal,
+    Animated,
+    Easing
 } from "react-native";
 
 import { getProduct } from "../services/servicesProducts";
 
-export default function Products() {
+export default function Products({ navigation }) {
 
     const [products, setProducts] = useState([]);
     const [menuVisible, setMenuVisible] = useState(false);
 
-    const slideAnim = useRef(new Animated.Value(-260)).current; // menu fora da tela
+    const slideAnim = useRef(new Animated.Value(-260)).current;
 
     const openMenu = () => {
         setMenuVisible(true);
@@ -77,7 +77,7 @@ export default function Products() {
             {/* MODAL DO MENU */}
             <Modal transparent visible={menuVisible} animationType="none">
                 <TouchableOpacity style={Styles.overlay} activeOpacity={1} onPress={closeMenu}>
-                    
+
                     <Animated.View style={[Styles.sideMenu, { left: slideAnim }]}>
 
                         <Text style={Styles.menuTitle}>MENU</Text>
@@ -98,8 +98,12 @@ export default function Products() {
                             <Text style={Styles.menuItem}>Usuário</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => {
+                            closeMenu();
+                            navigation.navigate('Settings');
+                        }}>
                             <Text style={Styles.menuItem}>Settings</Text>
+
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={closeMenu} style={Styles.backArrow}>

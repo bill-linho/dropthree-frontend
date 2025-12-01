@@ -61,11 +61,6 @@ const handleRegister = async () => {
   return { sucesso: true };
 };
 
-
-  const handleBack = () => {
-    navigation.navigate("Login");
-  };
-
   return (
     <View style={styles.container}>
       <View style={styles.formContainer}>
@@ -110,7 +105,7 @@ const handleRegister = async () => {
           <Text style={styles.registerButtonText}>REGISTRAR</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.backButton} onPress={handleBack}>
+        <TouchableOpacity style={styles.backButton}onPress={() => navigation.goBack()}>
           <Text style={styles.backButtonText}>VOLTAR</Text>
         </TouchableOpacity>
 
