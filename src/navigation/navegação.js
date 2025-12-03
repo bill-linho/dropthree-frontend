@@ -13,7 +13,7 @@ import Settings from '../screens/settings';
 export default function stackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="InterfaceDosProdutos">
+            <Stack.Navigator initialRouteName="Home">
 
                 <Stack.Screen name="Home" component={Home} />
 
@@ -22,8 +22,6 @@ export default function stackRoutes() {
                 <Stack.Screen name="Cadastro" component={SignUpScreen} />
 
                 <Stack.Screen name="InterfaceDosProdutos" component={Products} options={{tabBarVisible: false,headerTransparent:true,headerShown:false}} />
-
-                <Stack.Screen name="PaginaProduto" component={ProductDetails} />
 
                 <Stack.Screen name="Settings" component={Settings} />
 

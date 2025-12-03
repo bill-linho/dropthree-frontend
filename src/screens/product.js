@@ -167,17 +167,6 @@ export default function Products({ navigation }) {
                             <Text style={Styles.menuItem}>Início</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity 
-                            style={Styles.menuItemContainer} 
-                            onPress={closeMenu}   // Só fecha o menu
-                        >
-                        <Text style={Styles.menuItem}>Categorias</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity style={Styles.menuItemContainer}>
-                            <Text style={Styles.menuItem}>Carrinho</Text>
-                        </TouchableOpacity>
-
                         <TouchableOpacity style={Styles.menuItemContainer} onPress={navigateToSettings}>
                             <Text style={Styles.menuItem}>Configurações</Text>
                         </TouchableOpacity>
