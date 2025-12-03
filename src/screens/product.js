@@ -13,7 +13,8 @@ import {
 } from "react-native";
 
 // Importando as funções unificadas do seu serviço
-import { getProducts, getCategories } from "../services/serviceLogin";
+import { getProducts } from "../services/servicesProducts";
+import { getCategories } from "../services/serviceCategory";
 
 export default function Products({ navigation }) {
 
@@ -164,6 +165,13 @@ export default function Products({ navigation }) {
                         {/* Note: Aqui você pode colocar links reais ou placeholders */}
                         <TouchableOpacity style={Styles.menuItemContainer}>
                             <Text style={Styles.menuItem}>Início</Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity 
+                            style={Styles.menuItemContainer} 
+                            onPress={closeMenu}   // Só fecha o menu
+                        >
+                        <Text style={Styles.menuItem}>Categorias</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity style={Styles.menuItemContainer}>

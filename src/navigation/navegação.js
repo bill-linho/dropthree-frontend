@@ -13,7 +13,7 @@ import Settings from '../screens/settings';
 export default function stackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName="InterfaceDosProdutos">
 
                 <Stack.Screen name="Home" component={Home} />
 

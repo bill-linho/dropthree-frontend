@@ -1,6 +1,6 @@
 const url = 'http://localhost:3000'
 
-export async function getProduct() {
+export async function getProducts() {
     const request = `${url}/produto`
     try {
         const response = await fetch(request, {
@@ -11,6 +11,7 @@ export async function getProduct() {
         
         return data.dados;
     } catch (e) {
-
+        console.error("Erro produtos:", e);
+        return [];
     }
 }
