@@ -6,6 +6,7 @@ export default function Home({ navigation }) {
     <View style={styles.container}>
     
       <Text style={styles.title}>Bem-vindo!</Text>
+      <Text style={{fontSize: 60,fontWeight: 'bold',marginBottom: 10,color: '#333'}}>DropThree</Text>
       <Text style={styles.subtitle}>Escolha uma opção para começar</Text>
 
       <TouchableOpacity 

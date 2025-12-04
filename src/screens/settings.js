@@ -24,17 +24,7 @@ export default function Settings({ navigation }) {
   const toggleSwitch = () => setNotificationsEnabled(previousState => !previousState);
 
   const handleLogout = () => {
-    Alert.alert(
-      "Sair",
-      "Deseja realmente sair do aplicativo?",
-      [
-        { text: "Cancelar", style: "cancel" },
-        { text: "Sim", onPress: async () => {
-             await logout(); // Limpa os dados de login salvos
-             navigation.replace('Login'); // Navega para o login (ajuste o nome da sua tela inicial se for diferente)
-        }}
-      ]
-    );
+    navigation.replace("Home")
   };
 
   return (
